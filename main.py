@@ -3,9 +3,11 @@ import uvicorn
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+from transformers import pipeline
+
+from haystack.nodes import TransformersQueryClassifier  # type: ignore
 
 from dotenv import load_dotenv
-
 # Load environment variables from .env file
 load_dotenv()
 

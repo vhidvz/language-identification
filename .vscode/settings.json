@@ -6,6 +6,7 @@
     "pdoc",
     "pydantic",
     "uvicorn",
+    "venv",
     "vhidvz"
   ]
 }
