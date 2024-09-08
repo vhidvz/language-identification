@@ -2,8 +2,10 @@
   "cSpell.words": [
     "dotenv",
     "fastapi",
+    "fasttext",
     "pdoc",
     "pydantic",
+    "tqdm",
     "uvicorn",
     "venv",
     "vhidvz"

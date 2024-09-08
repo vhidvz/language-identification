@@ -4,9 +4,6 @@ import uvicorn
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-from transformers import pipeline
-
-from haystack.components.classifiers import DocumentLanguageClassifier
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
