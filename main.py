@@ -1,15 +1,15 @@
 import os
+import dotenv
 import uvicorn
 
 from fastapi import FastAPI
 from pydantic import BaseModel
 from transformers import pipeline
 
-from haystack.nodes import TransformersQueryClassifier  # type: ignore
+from haystack.nodes import TransformersQueryClassifier
 
-from dotenv import load_dotenv
 # Load environment variables from .env file
-load_dotenv()
+dotenv.load_dotenv()
 
 app = FastAPI(
     title="Hello World API",
