@@ -1,7 +1,5 @@
-torch>=2.4.1
 uvicorn>=0.30.5
 pydantic>=2.9.0
 fastapi>=0.114.0
-haystack-ai>=2.5.0
-transformers>=4.44.2
 python-dotenv>=1.0.1
+farm_haystack[all]>=1.26.3
