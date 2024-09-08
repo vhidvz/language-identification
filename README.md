@@ -1,1 +1,1 @@
-# translate-intellij-ai
+# Quick Start
