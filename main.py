@@ -13,7 +13,7 @@ dotenv.load_dotenv()
 app = FastAPI(
     title="Language Identification",
     description="https://fasttext.cc/docs/en/language-identification.html",
-    version="1.0.1"
+    version="1.0.0"
 )
 
 model = LanguageIdentification().load_model()
