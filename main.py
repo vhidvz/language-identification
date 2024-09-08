@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from transformers import pipeline
 
-from haystack.nodes import TransformersQueryClassifier
+from haystack.components.classifiers import DocumentLanguageClassifier
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
