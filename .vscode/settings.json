@@ -2,7 +2,6 @@
   "cSpell.words": [
     "dotenv",
     "fastapi",
-    "intellij",
     "pdoc",
     "pydantic",
     "uvicorn",
