@@ -1,1 +1,3 @@
-pydoc>=14.6.1
+uvicorn>=0.30.5
+pydantic>=2.9.0
+fastapi>=0.114.0

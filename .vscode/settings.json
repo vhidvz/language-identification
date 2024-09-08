@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["intellij", "pdoc", "vhidvz"]
+  "cSpell.words": [
+    "dotenv",
+    "fastapi",
+    "intellij",
+    "pdoc",
+    "pydantic",
+    "uvicorn",
+    "vhidvz"
+  ]
 }
