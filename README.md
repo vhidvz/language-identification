@@ -3,5 +3,5 @@
 ## Documentation
 
 ```sh
-pdoc --output-dir docs --html translate-ai
+pdoc --output-dir docs --html main.py
 ```
