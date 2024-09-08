@@ -17,7 +17,6 @@ class LanguageIdentification():
 
     def load_model(self):
         path = '/'.join(MODEL_PATH)
-
         try:
             if not os.path.exists(path):
                 if not os.path.exists(MODEL_PATH[0]):
@@ -50,6 +49,7 @@ class LanguageIdentification():
             if os.path.exists(path):
                 os.remove(path)
             raise e
+        return self
 
     def detect(self, text: str):
         if self.model is None:

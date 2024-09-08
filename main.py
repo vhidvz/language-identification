@@ -2,42 +2,48 @@ import os
 import dotenv
 import uvicorn
 
-from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException
+
+from model import LanguageIdentification
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
 
 app = FastAPI(
-    title="Hello World API",
-    description="A simple API that says hello",
+    title="Language Identification",
+    description="https://fasttext.cc/docs/en/language-identification.html",
     version="1.0.0"
 )
 
-
-class HelloResponse(BaseModel):
-    message: str
+model = LanguageIdentification().load_model()
 
 
-@app.get("/", response_model=HelloResponse)
-async def root():
-    """
-    Root endpoint that returns a hello message.
-    """
-    return {"message": "Hello World"}
+class TextInput(BaseModel):
+    text: str
 
 
-@app.get("/hello/{name}", response_model=HelloResponse)
-async def say_hello(name: str):
-    """
-    Endpoint that says hello to a specific name.
-    """
-    return {"message": f"Hello {name}"}
+class ResponseModel(BaseModel):
+    language: str
+    confidence: float
+
+
+@app.post("/detect", response_model=ResponseModel)
+def detect_language(payload: TextInput):
+    # Ensure text is provided
+    if not payload.text:
+        raise HTTPException(status_code=400, detail="Text input is required.")
+
+    # Detect language
+    try:
+        return model.detect(payload.text)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 if __name__ == "__main__":
-    port = os.getenv("PORT", 8000)
+    port = int(os.getenv("PORT", '8000'))
 
-    print("API Route: http://0.0.0.0:{}".format(port))
     print("ReDoc OpenAPI: http://0.0.0.0:{}/redoc".format(port))
     print("Swagger OpenAPI: http://0.0.0.0:{}/docs".format(port))
 
