@@ -29,7 +29,7 @@ class ResponseModel(BaseModel):
 
 
 @app.post("/detect", response_model=ResponseModel)
-def detect_language(payload: TextInput):
+def detect(payload: TextInput):
     # Ensure text is provided
     if not payload.text:
         raise HTTPException(status_code=400, detail="Text input is required.")
