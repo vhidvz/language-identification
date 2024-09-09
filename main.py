@@ -19,7 +19,7 @@ app = FastAPI(
 model = LanguageIdentification().load_model()
 
 
-class TextInput(BaseModel):
+class RequestModel(BaseModel):
     text: str
 
 
@@ -29,7 +29,7 @@ class ResponseModel(BaseModel):
 
 
 @app.post("/detect", response_model=ResponseModel)
-def detect(payload: TextInput):
+def detect(payload: RequestModel):
     # Ensure text is provided
     if not payload.text:
         raise HTTPException(status_code=400, detail="Text input is required.")
