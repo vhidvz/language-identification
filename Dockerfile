@@ -19,4 +19,4 @@ EXPOSE 8000
 ENV WORKERS=1
 
 # Start the application
-CMD fastapi run --workers ${WORKERS} main.py
+CMD ["fastapi", "run", "--workers", "${WORKERS}", "main.py"]
