@@ -7,6 +7,12 @@ git clone git@github.com:vhidvz/language-identification.git
 cd language-identification && docker-compose up -d
 ```
 
+**Docker Hub:**
+
+```sh
+docker run -p 8000:8000 vhidvz/language-identification:latest
+```
+
 Endpoints are fully documented using OpenAPI Specification 3 (OAS3) at:
 
 - ReDoc: <http://localhost:8000/redoc>
