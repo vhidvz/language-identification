@@ -6,6 +6,8 @@ services:
       - 8000:8000
     environment:
       WORKERS: 4
+    volumes:
+      - .data:.data
     networks:
       - localnet
 

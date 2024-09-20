@@ -1,20 +1,20 @@
 # Quick Start
 
-```sh
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+Language identification microservice powered by the FastText language detection model, providing fast and accurate recognition of over 170 languages.
 
 ```sh
-python main.py
-python model.py
-
-fastapi run --workers 4 main.py
-uvicorn main:app --host 0.0.0.0 --port 8080 --workers 4
+git clone git@github.com:vhidvz/language-identification.git
+cd language-identification && docker-compose up -d
 ```
+
+Endpoints are fully documented using OpenAPI Specification 3 (OAS3) at:
+
+- ReDoc: <http://localhost:8000/redoc>
+- Swagger: <http://localhost:8000/docs>
 
 ## Documentation
+
+To generate the documentation for the python model, execute the following command:
 
 ```sh
 pdoc --output-dir docs model.py
